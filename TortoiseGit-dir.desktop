@@ -1,0 +1,187 @@
+#
+# TortoiseGit
+
+[Desktop Entry]
+Type=Service
+Actions=log;_SEPARATOR_;about;bisectstart;bisectgood;bisectbad;bisectskip;bisectreset;fetch;commit;cleanup;switch;export;merge;abortmerge;settings;help;status;repobrowser;pull;push;rebase;stashsave;stashapply;stashpop;reflog;refbrowse;updatecheck;revisiongraph;tag;branch;worktreelist
+#repocreate;subadd;subupdate
+Icon=git
+MimeType=inode/directory;
+X-KDE-StartupNotify=false
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=TortoiseGit
+
+[Desktop Action log]
+Icon=FB81_TortoiseGitProc.0
+#Icon=server-database
+Name=Show Log
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:log /path:$(winepath -w "%f")
+
+[Desktop Action about]
+Icon=help-about-symbolic
+Name=About
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:about /path:$(winepath -w "%f")
+
+[Desktop Action bisectstart]
+Icon=zoom-select-x
+Name=Bisect start
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:bisect /start /path:$(winepath -w "%f")
+
+[Desktop Action bisectgood]
+Icon=zoom-in
+Name=Bisect good
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:bisect /good /path:$(winepath -w "%f")
+
+[Desktop Action bisectbad]
+Icon=zoom-out
+Name=Bisect bad
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:bisect /bad /path:$(winepath -w "%f")
+
+[Desktop Action bisectskip]
+Icon=zoom-next
+Name=Bisect skip
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:bisect /skip /path:$(winepath -w "%f")
+
+[Desktop Action bisectreset]
+Icon=zoom-original
+Name=Bisect reset
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:bisect /reset /path:$(winepath -w "%f")
+
+[Desktop Action fetch]
+Icon=vcs-pull
+Name=Fetch...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:fetch /path:$(winepath -w "%f")
+
+[Desktop Action commit]
+Icon=vcs-commit-cvs-cervisia
+Name=Commit...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:commit /path:$(winepath -w "%f")
+
+[Desktop Action cleanup]
+Icon=edit-clear-history
+Name=Cleanup...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:cleanup /path:$(winepath -w "%f")
+
+# this sets filemode to false, which is probably wrong
+# [Desktop Action repocreate]
+# Icon=document-cleanup
+# Name=Repo create
+# Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:repocreate
+
+[Desktop Action switch]
+Icon=vcs-branch
+Name=Switch...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:switch /path:$(winepath -w "%f")
+
+[Desktop Action export]
+Icon=download
+Name=Export...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:export /path:$(winepath -w "%f")
+
+# doesn't work
+[Desktop Action merge]
+Icon=vcs-merge-request
+Name=Merge...
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:merge /path:$(winepath -w "%f")
+
+[Desktop Action abortmerge]
+Icon=vcs-merge
+Name=Merge abort...
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:merge /abort /path:$(winepath -w "%f")
+
+[Desktop Action settings]
+Icon=settings-configure
+Name=Settings...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:settings /path:$(winepath -w "%f")
+
+[Desktop Action help]
+Icon=help-contextual
+Name=Help
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:help /path:$(winepath -w "%f")
+
+[Desktop Action status]
+Icon=vcs-status-cvs-cervisia
+Name=Repo Status...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:repostatus /path:$(winepath -w "%f")
+
+[Desktop Action repobrowser]
+Icon=edit-find
+Name=Repobrowser
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:repobrowser /path:$(winepath -w "%f")
+
+[Desktop Action pull]
+Icon=vcs-pull
+Name=Pull...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:pull /path:$(winepath -w "%f")
+
+[Desktop Action push]
+Icon=vcs-push
+Name=Push...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:push /path:$(winepath -w "%f")
+
+[Desktop Action rebase]
+Icon=generalise
+Name=Rebase...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:rebase /path:$(winepath -w "%f")
+
+[Desktop Action stashsave]
+Icon=vcs-stash
+Name=Stash
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:stashsave /path:$(winepath -w "%f")
+
+[Desktop Action stashapply]
+Icon=vcs-stash-pop
+Name=Stash apply
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:stashapply /path:$(winepath -w "%f")
+
+[Desktop Action stashpop]
+Icon=vcs-stash-pop
+Name=Stash pop
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:stashpop /path:$(winepath -w "%f")
+
+# doesn't work
+# [Desktop Action subadd]
+# Icon=edit-find
+# Name=Submodule add
+# Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:subadd
+# 
+# doesn't work
+# [Desktop Action subupdate]
+# Icon=edit-find
+# Name=Submodule update
+# Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:subupdate /path:$(winepath -w "%f")
+
+[Desktop Action reflog]
+Icon=edit-find
+Name=Reflog
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:reflog
+
+[Desktop Action refbrowse]
+Icon=edit-find
+Name=Refbrowser
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:refbrowse
+
+[Desktop Action updatecheck]
+Icon=update-none
+Name=Updatecheck
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:updatecheck
+
+[Desktop Action revisiongraph]
+Icon=edit-find
+Name=Revision Graph
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:revisiongraph
+
+[Desktop Action tag]
+Icon=action-rss_tag
+Name=Tag
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:tag
+
+[Desktop Action branch]
+Icon=vcs-branch
+Name=Branch
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:branch /path:$(winepath -w "%f")
+
+[Desktop Action worktreelist]
+Icon=vcs-branch
+Name=Worktrees
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:worktreelist /path:$(winepath -w "%f")

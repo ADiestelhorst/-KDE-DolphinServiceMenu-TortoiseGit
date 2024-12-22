@@ -1,0 +1,3 @@
+#!/bin/bash
+[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX
+wine 'C:\Program Files\Git\bin\git.exe' $@ 2>/dev/null

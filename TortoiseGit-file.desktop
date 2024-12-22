@@ -1,0 +1,58 @@
+#
+# TortoiseGit
+#
+# Es gibt auchein cat-Kommando, womit man beliebige Stände in eine Datei kopieren kann. Aber man braucht zwei Argumente
+
+[Desktop Entry]
+Type=Service
+Actions=log;_SEPARATOR_;resolve;rename;diff2base;ignore;blame
+# add;revert;remove
+Icon=git
+MimeType=application/octet-stream
+X-KDE-StartupNotify=false
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=TortoiseGit
+
+[Desktop Action log]
+Icon=FB81_TortoiseGitProc.0
+#Icon=server-database
+Name=Show Log
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:log /findtype:2 /path:$(winepath -w "%f")
+
+# Already in Dolphin Git
+# [Desktop Action add]
+# Icon=edit-find
+# Name=Add
+# Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:add /path:$(winepath -w -0 %F | ( mapfile -d ""; IFS='*';printf '%s' "${MAPFILE[*]}" ))
+
+[Desktop Action resolve]
+Icon=dialog-ok
+Name=resolve...
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:resolve /path:$(winepath -w -0 %F | ( mapfile -d ""; IFS='*';printf '%s' "${MAPFILE[*]}" ))
+
+# Already in Dolphin Git
+# [Desktop Action remove]
+# Icon=edit-find
+# Name=Remove
+# Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:remove /path:$(winepath -w "%f")
+
+[Desktop Action rename]
+Icon=edit-rename
+Name=Rename...
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:rename /path:$(winepath -w "%f")
+
+[Desktop Action diff2base]
+Icon=vcs-diff-symbolic
+Name=Diff to Base
+Exec=cd %U;[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:diff /path:$(winepath -w "%f")
+
+[Desktop Action ignore]
+Icon=filename-ignore-amarok
+Name=Ignore
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:ignore /path:$(winepath -w -0 %F | ( mapfile -d ""; IFS='*';printf '%s' "${MAPFILE[*]}" ))
+
+[Desktop Action blame]
+Icon=info
+Name=Blame
+Exec=[ "$TORTOISE_PREFIX" ] && export WINEPREFIX=$TORTOISE_PREFIX; wine 'C:\\Program Files\\TortoiseGit\\bin\\TortoiseGitProc.exe' /command:blame /path:$(winepath -w "%f")
+
